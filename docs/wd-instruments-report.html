@@ -1,0 +1,455 @@
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Alignment of MusicBrainz and Wikidata Instruments</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+
+  <body style="margin: 20px;">
+    <h1>Alignment of MusicBrainz and Wikidata Instruments</h1>
+
+    <p>Latest MB database update: 2021-01-13</p>
+    <p>Latest update: 2021-01-28</p>
+    
+    <ol>
+      <li><a href="#wd2mb">Add missing Wikidata links to MusicBrainz</a></li>
+      <li><a href="#mb2wd">Add missing MusicBrainz links to Wikidata</a></li>
+      <li><a href="#alignment">Missing alignment suggestions</a>
+    </ol>
+    
+    <h2 id="wd2mb">Add missing Wikidata links to MusicBrainz</h2>
+    <table border="1" class="table table-striped table-hover table-sm">
+  <thead class="thead-light">
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name_wd</th>
+      <th>wd</th>
+      <th>mbid</th>
+    </tr>
+  </thead class="thead-light">
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Rebana</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q3181140">Q3181140</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/551e553a-cadd-4363-8723-f72aab5431d0">551e553a-cadd-4363-8723-f72aab5431d0</a></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>akkordolia</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q4701390">Q4701390</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/bd5fa79a-ea6f-4e11-9463-f6f43cca363c">bd5fa79a-ea6f-4e11-9463-f6f43cca363c</a></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>bell</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q101401">Q101401</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/c95c7129-d180-4218-afea-4b74ef70e2be">c95c7129-d180-4218-afea-4b74ef70e2be</a></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bellows-blown bagpipe</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q63619194">Q63619194</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/d4cbc6fd-5e68-4cf4-afeb-dd2fb4df3c2d">d4cbc6fd-5e68-4cf4-afeb-dd2fb4df3c2d</a></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>dilrupa</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q5277044">Q5277044</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/57deb1b0-b7fe-4616-b9cb-bbd59bc0acd8">57deb1b0-b7fe-4616-b9cb-bbd59bc0acd8</a></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>fretless bass</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q932855">Q932855</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/12f20f43-c71d-4476-8ada-b968aab50900">12f20f43-c71d-4476-8ada-b968aab50900</a></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>lap slide guitar</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q6488060">Q6488060</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/c0ea0405-ae3f-4851-bf85-277fadff80e2">c0ea0405-ae3f-4851-bf85-277fadff80e2</a></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>scraped idiophone</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q1644824">Q1644824</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/dbd1ec09-34fd-412e-b73b-124e46cf7cdf">dbd1ec09-34fd-412e-b73b-124e46cf7cdf</a></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>tromboon</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q840638">Q840638</a></td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/ee499c78-26df-4698-ab97-c4120276eb1a">ee499c78-26df-4698-ab97-c4120276eb1a</a></td>
+    </tr>
+  </tbody>
+</table>
+
+    <h2 id="mb2wd">Add missing MusicBrainz links to Wikidata</h2>
+    <table border="1" class="table table-striped table-hover table-sm">
+  <thead class="thead-light">
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name_mb</th>
+      <th>mbid</th>
+      <th>wd</th>
+    </tr>
+  </thead class="thead-light">
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Pierrot ensemble</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/51e92fd2-e56e-4576-8547-acb63e8b8446">51e92fd2-e56e-4576-8547-acb63e8b8446</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q7192570">Q7192570</a></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>baglamas</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/d4d5309f-166e-4e14-9887-06692f2c1027">d4d5309f-166e-4e14-9887-06692f2c1027</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q528239">Q528239</a></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>bağlama</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/2dd967cd-104e-4696-8a70-0f6fd37779e7">2dd967cd-104e-4696-8a70-0f6fd37779e7</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q717773">Q717773</a></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bedug</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/9063d25e-87e4-4adc-81d4-8fdee23bd26f">9063d25e-87e4-4adc-81d4-8fdee23bd26f</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q3624317">Q3624317</a></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bīn</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/efa5b047-95e7-4ebb-9987-b07208a1ac27">efa5b047-95e7-4ebb-9987-b07208a1ac27</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q5266546">Q5266546</a></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>diatonic button accordion</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/842d3d24-f638-47e6-a239-8578723db09c">842d3d24-f638-47e6-a239-8578723db09c</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q379269">Q379269</a></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>dilruba</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/57deb1b0-b7fe-4616-b9cb-bbd59bc0acd8">57deb1b0-b7fe-4616-b9cb-bbd59bc0acd8</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q17190172">Q17190172</a></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>gendèr barung</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/60cd46dd-45d5-47ff-8d7e-a501e9c7938c">60cd46dd-45d5-47ff-8d7e-a501e9c7938c</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q74581228">Q74581228</a></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>kempul</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/e0350378-0d4b-49d5-ad81-8f74e1b54efc">e0350378-0d4b-49d5-ad81-8f74e1b54efc</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q6387169">Q6387169</a></td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>lira da braccio</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/6060f9c4-10ee-48b7-a2d8-e97f944afa70">6060f9c4-10ee-48b7-a2d8-e97f944afa70</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q584967">Q584967</a></td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>piano duo</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/0a49e297-8430-44cd-be7b-1fd22560b6e1">0a49e297-8430-44cd-be7b-1fd22560b6e1</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q43136500">Q43136500</a></td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>piano four hands</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/c3f3aacc-d9c0-4b6e-92e8-05df9af50e17">c3f3aacc-d9c0-4b6e-92e8-05df9af50e17</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q227484">Q227484</a></td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>piano quartet</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/ffa61786-07ed-48ed-b7bb-a17d248fba8c">ffa61786-07ed-48ed-b7bb-a17d248fba8c</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q1746025">Q1746025</a></td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>pluriarc</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/d43c2380-efe5-4488-b08f-777296d0c95c">d43c2380-efe5-4488-b08f-777296d0c95c</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q3392660">Q3392660</a></td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>rammana</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/551e553a-cadd-4363-8723-f72aab5431d0">551e553a-cadd-4363-8723-f72aab5431d0</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q16033036">Q16033036</a></td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>saron barung</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/5b159ed5-2c58-4200-accb-c2ac5c9ace7f">5b159ed5-2c58-4200-accb-c2ac5c9ace7f</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q13096799">Q13096799</a></td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>saron demung</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/81da5ec5-4a2f-4481-b01d-fb8ab9ea116d">81da5ec5-4a2f-4481-b01d-fb8ab9ea116d</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q4262704">Q4262704</a></td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>saron panerus</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/2656be9c-b531-4cbb-a5b5-30454054343c">2656be9c-b531-4cbb-a5b5-30454054343c</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q20585538">Q20585538</a></td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>saron peking</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/b3fe02dc-f412-464e-b216-8c3fe45de456">b3fe02dc-f412-464e-b216-8c3fe45de456</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q13095883">Q13095883</a></td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>scraped idiophone</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/dbd1ec09-34fd-412e-b73b-124e46cf7cdf">dbd1ec09-34fd-412e-b73b-124e46cf7cdf</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q50825269">Q50825269</a></td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>string trio</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/6efec29d-013a-4687-b710-fe25800eb358">6efec29d-013a-4687-b710-fe25800eb358</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q29787068">Q29787068</a></td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>tape</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/672c19ec-0ca3-4ece-9f6b-7f1c0018a0e6">672c19ec-0ca3-4ece-9f6b-7f1c0018a0e6</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q193663">Q193663</a></td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>viol consort</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/e46bffd3-15a3-426a-923f-705839128609">e46bffd3-15a3-426a-923f-705839128609</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q1492889">Q1492889</a></td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>voice synthesizer</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/b0f83029-6d38-4f6f-bd30-db44e427f497">b0f83029-6d38-4f6f-bd30-db44e427f497</a></td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q16346">Q16346</a></td>
+    </tr>
+  </tbody>
+</table>
+
+    <h2 id="alignment">Missing alignment suggestions</h2>
+    
+    <h3>Alignment on exact names</h3>
+    <table border="1" class="table table-striped table-hover table-sm">
+  <thead class="thead-light">
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mbid</th>
+      <th>name</th>
+      <th>wd</th>
+      <th>HornbostelSachs</th>
+    </tr>
+  </thead class="thead-light">
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/ca17a349-e0e3-4b9b-b74d-898a2b54b43e">ca17a349-e0e3-4b9b-b74d-898a2b54b43e</a></td>
+      <td>syrinx</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q10902606">Q10902606</a></td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/c95c7129-d180-4218-afea-4b74ef70e2be">c95c7129-d180-4218-afea-4b74ef70e2be</a></td>
+      <td>bell</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q101401">Q101401</a></td>
+      <td>111.242</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/c95c7129-d180-4218-afea-4b74ef70e2be">c95c7129-d180-4218-afea-4b74ef70e2be</a></td>
+      <td>bell</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q96309259">Q96309259</a></td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/e5408785-e228-4919-9e79-6f997bcdfea5">e5408785-e228-4919-9e79-6f997bcdfea5</a></td>
+      <td>tube zither</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q30034781">Q30034781</a></td>
+      <td>312</td>
+    </tr>
+  </tbody>
+</table>
+    
+    <h3>Alignment on fuzzy matching</h3>
+    <table border="1" class="table table-striped table-hover table-sm">
+  <thead class="thead-light">
+    <tr style="text-align: right;">
+      <th></th>
+      <th>best_match_score</th>
+      <th>mbid</th>
+      <th>name_left</th>
+      <th>name_right</th>
+      <th>wd</th>
+    </tr>
+  </thead class="thead-light">
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.459847</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/e5408785-e228-4919-9e79-6f997bcdfea5">e5408785-e228-4919-9e79-6f997bcdfea5</a></td>
+      <td>tube zither</td>
+      <td>tube zither</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q30034781">Q30034781</a></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.282946</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/3c5349ca-cf82-4537-851f-1957ac88bced">3c5349ca-cf82-4537-851f-1957ac88bced</a></td>
+      <td>electric lap steel guitar</td>
+      <td>Lap steel</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q94994651">Q94994651</a></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.246483</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/ca17a349-e0e3-4b9b-b74d-898a2b54b43e">ca17a349-e0e3-4b9b-b74d-898a2b54b43e</a></td>
+      <td>syrinx</td>
+      <td>syrinx</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q10902606">Q10902606</a></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.206346</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/e798a2bd-a578-4c28-8eea-6eca2d8b2c5d">e798a2bd-a578-4c28-8eea-6eca2d8b2c5d</a></td>
+      <td>horn</td>
+      <td>Horn</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q94994539">Q94994539</a></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.193824</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/c95c7129-d180-4218-afea-4b74ef70e2be">c95c7129-d180-4218-afea-4b74ef70e2be</a></td>
+      <td>bell</td>
+      <td>bell</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q101401">Q101401</a></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.130599</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/872b72a2-541c-4115-b7ce-2dfed3e84884">872b72a2-541c-4115-b7ce-2dfed3e84884</a></td>
+      <td>bin-sitar</td>
+      <td>Sitar</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q79485179">Q79485179</a></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.130280</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/371dd55f-5251-4905-a8b2-2d2acf352376">371dd55f-5251-4905-a8b2-2d2acf352376</a></td>
+      <td>keyed brass instruments</td>
+      <td>brass instrument</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q180744">Q180744</a></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.125435</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/837c7244-ece8-47ff-b215-78f4aa4f227d">837c7244-ece8-47ff-b215-78f4aa4f227d</a></td>
+      <td>treble violin</td>
+      <td>Violin</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q80002939">Q80002939</a></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.114376</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/e5781903-d6ef-4480-a158-60300265577c">e5781903-d6ef-4480-a158-60300265577c</a></td>
+      <td>natural brass instruments</td>
+      <td>brass instrument</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q180744">Q180744</a></td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.104660</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/7a5b3204-0200-426c-88d5-3f26a225b757">7a5b3204-0200-426c-88d5-3f26a225b757</a></td>
+      <td>hmông flute</td>
+      <td>flute</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q11405">Q11405</a></td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.104342</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/d2f041b9-b6a6-4973-badd-1b07a37192c9">d2f041b9-b6a6-4973-badd-1b07a37192c9</a></td>
+      <td>valved brass instruments</td>
+      <td>brass instrument</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q180744">Q180744</a></td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.097538</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/205acba3-c6aa-4e47-be4c-2be043cfd511">205acba3-c6aa-4e47-be4c-2be043cfd511</a></td>
+      <td>plucked idiophone</td>
+      <td>idiophone</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q12639">Q12639</a></td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.094626</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/f0ddf0ec-e8ac-4765-acef-0687af2b2f32">f0ddf0ec-e8ac-4765-acef-0687af2b2f32</a></td>
+      <td>fourth flute</td>
+      <td>flute</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q11405">Q11405</a></td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.094540</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/87d5bd6a-8d14-4ed0-befa-b90379536634">87d5bd6a-8d14-4ed0-befa-b90379536634</a></td>
+      <td>nylon guitar</td>
+      <td>Guitar</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q79485088">Q79485088</a></td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.094540</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/c0ea0405-ae3f-4851-bf85-277fadff80e2">c0ea0405-ae3f-4851-bf85-277fadff80e2</a></td>
+      <td>Hawaiian guitar</td>
+      <td>Guitar</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q79485088">Q79485088</a></td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.094540</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/c2bfcf82-356c-4606-9dd7-51efd1b11bec">c2bfcf82-356c-4606-9dd7-51efd1b11bec</a></td>
+      <td>gut guitar</td>
+      <td>Guitar</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q79485088">Q79485088</a></td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0.091077</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/db36bd83-0606-42b9-91a0-d759ba52d0da">db36bd83-0606-42b9-91a0-d759ba52d0da</a></td>
+      <td>trumpet family</td>
+      <td>trumpet</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q8338">Q8338</a></td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.090461</td>
+      <td><a target="_blank" href="https://musicbrainz.org/instrument/2fb619eb-c5b3-495a-967a-b747b976a7d9">2fb619eb-c5b3-495a-967a-b747b976a7d9</a></td>
+      <td>bowed piano</td>
+      <td>piano</td>
+      <td><a target="_blank" href="https://www.wikidata.org/wiki/Q5994">Q5994</a></td>
+    </tr>
+  </tbody>
+</table>    
+  
+  </body>
+</html>
