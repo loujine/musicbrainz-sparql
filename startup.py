@@ -71,6 +71,32 @@ def _mb_link(entity_type, mbid):
             f'href="{SITE_URL}/{entity_type}/{mbid}">{mbid}</a>')
 
 
+def mb_label_edit_lc_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{SITE_URL}/label/{item.mbid}/edit?'
+        f'edit-label.label_code={item.lc_wd}">'
+        'edit</a>')
+
+
+def mb_label_edit_wd_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{SITE_URL}/label/{item.mbid}/edit?'
+        'edit-label.url.99.type=75d87e83-d927-4580-ba63-44dc76256f98&'
+        f'edit-label.url.99.text={WIKIDATA_URL}/{item.wd}">'
+        'edit</a>')
+
+
+def mb_label_edit_bnf_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{SITE_URL}/label/{item.mbid}/edit?'
+        'edit-label.url.99.type=83eca2b3-5ae1-43f5-a732-56fa9a8591b1&'
+        f'edit-label.url.99.text=https://catalogue.bnf.fr/ark:/12148/cb{item.bnf}">'
+        'edit</a>')
+
+
 print('Defining *sparql* helper function')
 
 

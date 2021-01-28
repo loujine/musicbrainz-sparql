@@ -9,6 +9,9 @@
 
 ### Record labels
 
+* [Notebook static version](wd-recordlabels.md)
+* [Alignment report](wd-recordlabels-report.html)
+
 ### Works
 
 ### Artists
