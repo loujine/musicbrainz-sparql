@@ -97,6 +97,15 @@ def mb_label_edit_bnf_link(item):
         'edit</a>')
 
 
+def mb_work_edit_wd_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{SITE_URL}/work/{item.mbid}/edit?'
+        'edit-work.url.99.type=587fdd8f-080e-46a9-97af-6425ebbcb3a2&'
+        f'edit-work.url.99.text={WIKIDATA_URL}/{item.wd}">'
+        'edit</a>')
+
+
 print('Defining *sparql* helper function')
 
 
