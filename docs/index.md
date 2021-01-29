@@ -2,6 +2,11 @@
 
 ## With wikidata
 
+### Events
+
+* [Notebook static version](wd-events.md)
+* [Alignment report](wd-events-report.html)
+
 ### Instruments
 
 * [Notebook static version](wd-instruments.md)

@@ -71,6 +71,15 @@ def _mb_link(entity_type, mbid):
             f'href="{SITE_URL}/{entity_type}/{mbid}">{mbid}</a>')
 
 
+def mb_event_edit_wd_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{SITE_URL}/event/{item.mbid}/edit?'
+        'edit-event.url.99.type=b022d060-e6a8-340f-8c73-6b21b1d090b9&'
+        f'edit-event.url.99.text={WIKIDATA_URL}/{item.wd}">'
+        'edit</a>')
+
+
 def mb_label_edit_lc_link(item):
     return (
         '<a target="_blank" '
