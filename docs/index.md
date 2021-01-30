@@ -2,6 +2,11 @@
 
 ## With wikidata
 
+### Artists
+
+* [Notebook static version](wd-artists.md)
+* [Alignment report](wd-artists-report.html)
+
 ### Events
 
 * [Notebook static version](wd-events.md)
@@ -21,5 +26,3 @@
 
 * [Notebook static version](wd-works.md)
 * [Alignment report](wd-works-report.html)
-
-### Artists

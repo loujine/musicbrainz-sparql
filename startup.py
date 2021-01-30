@@ -12,6 +12,7 @@ print('Last notebook update: {}'.format(date.today().isoformat()))
 
 print('Importing libs')
 print('Defining database parameters')
+DISCOGS_URL = 'https://discogs.com'
 SITE_URL = 'https://musicbrainz.org'
 WIKIDATA_URL = 'https://www.wikidata.org/wiki'
 
@@ -69,6 +70,15 @@ print()
 def _mb_link(entity_type, mbid):
     return ('<a target="_blank" '
             f'href="{SITE_URL}/{entity_type}/{mbid}">{mbid}</a>')
+
+
+def mb_artist_edit_wd_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{SITE_URL}/artist/{item.mbid}/edit?'
+        'edit-artist.url.99.type=689870a4-a1e4-4912-b17f-7b2664215698&'
+        f'edit-artist.url.99.text={WIKIDATA_URL}/{item.wd}">'
+        'edit</a>')
 
 
 def mb_event_edit_wd_link(item):
@@ -141,6 +151,11 @@ def wd_link(wdid):
             f'href="{WIKIDATA_URL}/{wdid}">{wdid}</a>')
 
 
+def discogs_link(entity_type, id):
+    return ('<a target="_blank" '
+            f'href="{DISCOGS_URL}/{entity_type}/{id}">{id}</a>')
+
+
 def df_to_html(original_df, **kwargs):
     entity_type = kwargs.get('entity_type',
                              globals().get('ENTITY_TYPE', 'artist'))
@@ -150,6 +165,8 @@ def df_to_html(original_df, **kwargs):
         df.wd = df.wd.apply(wd_link)
     if 'mbid' in df.columns:
         df.mbid = df.mbid.apply(lambda mbid: _mb_link(entity_type, mbid))
+    if 'discogs' in df.columns:
+        df.discogs = df.discogs.apply(lambda id: discogs_link(entity_type, id))
     return df.to_html(escape=False, **kwargs)
 
 
