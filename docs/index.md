@@ -22,6 +22,11 @@
 * [Notebook static version](wd-recordlabels.md)
 * [Alignment report](wd-recordlabels-report.html)
 
+### Release groups / Masters
+
+* [Notebook static version](wd-releasegroups.md)
+* [Alignment report](wd-releasegroups-report.html)
+
 ### Works
 
 * [Notebook static version](wd-works.md)

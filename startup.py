@@ -116,6 +116,15 @@ def mb_label_edit_bnf_link(item):
         'edit</a>')
 
 
+def mb_releasegroup_edit_wd_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{SITE_URL}/release-group/{item.mbid}/edit?'
+        'edit-release-group.url.99.type=b988d08c-5d86-4a57-9557-c83b399e3580&'
+        f'edit-release-group.url.99.text={WIKIDATA_URL}/{item.wd}">'
+        'edit</a>')
+
+
 def mb_work_edit_wd_link(item):
     return (
         '<a target="_blank" '
@@ -152,8 +161,11 @@ def wd_link(wdid):
 
 
 def discogs_link(entity_type, id):
+    type = {
+        'release-group': 'master',
+    }.get(entity_type, entity_type)
     return ('<a target="_blank" '
-            f'href="{DISCOGS_URL}/{entity_type}/{id}">{id}</a>')
+            f'href="{DISCOGS_URL}/{type}/{id}">{id}</a>')
 
 
 def df_to_html(original_df, **kwargs):
