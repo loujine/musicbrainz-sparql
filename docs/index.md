@@ -43,3 +43,10 @@
 
 * [Notebook static version](bnf-statistics.md)
 * [Alignment report](bnf-statistics-report.html)
+
+## With Doremus
+
+### Statistics
+
+* [Notebook static version](doremus-statistics.md)
+* [Alignment report](doremus-statistics-report.html)

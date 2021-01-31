@@ -278,3 +278,17 @@ def bnf_entity_count(entity_type):
         }}
     """, endpoint='http://data.bnf.fr/sparql')
     return int(df.cnt[0])
+
+
+def doremus_entity_count(entity_type):
+    type = {
+        'release_group': 'release-group'
+    }.get(entity_type, entity_type)
+    df = sparql(f"""
+        SELECT (COUNT(?concept) AS ?cnt)
+        WHERE {{
+            ?concept owl:sameAs ?mb .
+            FILTER (regex (?mb, 'musicbrainz.org/{type}/'))
+        }}
+    """, endpoint='http://data.doremus.org/sparql')
+    return int(df.cnt[0])
