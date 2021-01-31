@@ -13,7 +13,7 @@ print('Last notebook update: {}'.format(date.today().isoformat()))
 print('Importing libs')
 print('Defining database parameters')
 DISCOGS_URL = 'https://discogs.com'
-SITE_URL = 'https://musicbrainz.org'
+MB_URL = 'https://musicbrainz.org'
 WIKIDATA_URL = 'https://www.wikidata.org/wiki'
 
 PGHOST = os.environ.get('PGHOST', 'localhost')
@@ -97,13 +97,13 @@ print()
 # helper function to build canonical URLs
 def _mb_link(entity_type, mbid):
     return ('<a target="_blank" '
-            f'href="{SITE_URL}/{entity_type}/{mbid}">{mbid}</a>')
+            f'href="{MB_URL}/{entity_type}/{mbid}">{mbid}</a>')
 
 
 def mb_artist_edit_wd_link(item):
     return (
         '<a target="_blank" '
-        f'href="{SITE_URL}/artist/{item.mbid}/edit?'
+        f'href="{MB_URL}/artist/{item.mbid}/edit?'
         'edit-artist.url.99.type=689870a4-a1e4-4912-b17f-7b2664215698&'
         f'edit-artist.url.99.text={WIKIDATA_URL}/{item.wd}">'
         'edit</a>')
@@ -112,7 +112,7 @@ def mb_artist_edit_wd_link(item):
 def mb_event_edit_wd_link(item):
     return (
         '<a target="_blank" '
-        f'href="{SITE_URL}/event/{item.mbid}/edit?'
+        f'href="{MB_URL}/event/{item.mbid}/edit?'
         'edit-event.url.99.type=b022d060-e6a8-340f-8c73-6b21b1d090b9&'
         f'edit-event.url.99.text={WIKIDATA_URL}/{item.wd}">'
         'edit</a>')
@@ -121,7 +121,7 @@ def mb_event_edit_wd_link(item):
 def mb_label_edit_lc_link(item):
     return (
         '<a target="_blank" '
-        f'href="{SITE_URL}/label/{item.mbid}/edit?'
+        f'href="{MB_URL}/label/{item.mbid}/edit?'
         f'edit-label.label_code={item.lc_wd}">'
         'edit</a>')
 
@@ -129,7 +129,7 @@ def mb_label_edit_lc_link(item):
 def mb_label_edit_wd_link(item):
     return (
         '<a target="_blank" '
-        f'href="{SITE_URL}/label/{item.mbid}/edit?'
+        f'href="{MB_URL}/label/{item.mbid}/edit?'
         'edit-label.url.99.type=75d87e83-d927-4580-ba63-44dc76256f98&'
         f'edit-label.url.99.text={WIKIDATA_URL}/{item.wd}">'
         'edit</a>')
@@ -138,7 +138,7 @@ def mb_label_edit_wd_link(item):
 def mb_label_edit_bnf_link(item):
     return (
         '<a target="_blank" '
-        f'href="{SITE_URL}/label/{item.mbid}/edit?'
+        f'href="{MB_URL}/label/{item.mbid}/edit?'
         'edit-label.url.99.type=83eca2b3-5ae1-43f5-a732-56fa9a8591b1&'
         f'edit-label.url.99.text=https://catalogue.bnf.fr/ark:/12148/cb{item.bnf}">'
         'edit</a>')
@@ -147,7 +147,7 @@ def mb_label_edit_bnf_link(item):
 def mb_releasegroup_edit_wd_link(item):
     return (
         '<a target="_blank" '
-        f'href="{SITE_URL}/release-group/{item.mbid}/edit?'
+        f'href="{MB_URL}/release-group/{item.mbid}/edit?'
         'edit-release-group.url.99.type=b988d08c-5d86-4a57-9557-c83b399e3580&'
         f'edit-release-group.url.99.text={WIKIDATA_URL}/{item.wd}">'
         'edit</a>')
@@ -156,7 +156,7 @@ def mb_releasegroup_edit_wd_link(item):
 def mb_work_edit_wd_link(item):
     return (
         '<a target="_blank" '
-        f'href="{SITE_URL}/work/{item.mbid}/edit?'
+        f'href="{MB_URL}/work/{item.mbid}/edit?'
         'edit-work.url.99.type=587fdd8f-080e-46a9-97af-6425ebbcb3a2&'
         f'edit-work.url.99.text={WIKIDATA_URL}/{item.wd}">'
         'edit</a>')
