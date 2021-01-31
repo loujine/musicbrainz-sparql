@@ -21,6 +21,34 @@ PGDATABASE = os.environ.get('PGDATABASE', 'musicbrainz_db')
 PGUSER = os.environ.get('PGUSER', 'musicbrainz')
 PGPASSWORD = os.environ.get('PGPASSWORD', 'musicbrainz')
 
+MB_ENTITIES = [
+    'area',
+    'artist',
+    'event',
+    'instrument',
+    'label',
+    'place',
+    'recording',
+    'release',
+    'release_group',
+    'series',
+    'work',
+]
+
+WD_MB_LINK_PROPERTIES = {
+    'area': 'P982',
+    'artist': 'P434',
+    'event': 'P6423',
+    'instrument': 'P1330',
+    'label': 'P966',
+    'place': 'P1004',
+    'recording': 'P4404',
+    'release': 'P5813',
+    'release_group': 'P436',
+    'series': 'P1407',
+    'work': 'P435',
+}
+
 
 print('Defining *sql* helper function')
 
@@ -154,6 +182,16 @@ def sparql(query, endpoint="https://query.wikidata.org/sparql", **kwargs):
         for result in results.bindings])
 
 
+def wd_entity_count(entity_type, prop):
+    df = sparql(f"""
+        SELECT (count(?{entity_type}) as ?cnt)
+        WHERE {{
+          ?{entity_type} wdt:{prop} ?mbid .
+        }}
+    """)
+    return int(df.cnt[0])
+
+
 # helper function to build canonical URLs
 def wd_link(wdid):
     return ('<a target="_blank" '
@@ -168,11 +206,12 @@ def discogs_link(entity_type, id):
             f'href="{DISCOGS_URL}/{type}/{id}">{id}</a>')
 
 
-def df_to_html(original_df, **kwargs):
+def df_to_html(original_df, reindex=True, **kwargs):
     entity_type = kwargs.get('entity_type',
                              globals().get('ENTITY_TYPE', 'artist'))
     df = original_df.copy()
-    df.index = range(len(df))
+    if reindex:
+        df.index = range(len(df))
     if 'wd' in df.columns:
         df.wd = df.wd.apply(wd_link)
     if 'mbid' in df.columns:
@@ -184,3 +223,42 @@ def df_to_html(original_df, **kwargs):
 
 def display_df(df, **kwargs):
     display(HTML(df_to_html(df, **kwargs)))
+
+
+def partial_query(entity, url_pattern):
+    link_table = f"l_{entity + '_url' if entity < 'url' else 'url_' + entity}"
+    entity_idx, url_idx = (0, 1) if entity < 'url' else (1, 0)
+    return f"""
+    FROM
+        url
+        JOIN {link_table} AS link ON link.entity{url_idx} = url.id
+        JOIN {entity} ON link.entity{entity_idx} = {entity}.id
+    WHERE
+        url.url LIKE '%%{url_pattern}%%'
+    """
+
+
+def mb_entity_count(entity, url_pattern='wikidata.org'):
+    df = sql(f"""
+    SELECT
+        COUNT({entity}.gid) AS cnt
+    {partial_query(entity, url_pattern)}
+    ;
+    """)
+    return int(df.cnt[0])
+
+
+def mb_entity_list(entity, url_pattern='wikidata.org'):
+    df = sql(f"""
+    SELECT
+        url.url AS wd,
+        {entity}.gid AS mbid,
+        {entity}.name
+    {partial_query(entity, url_pattern)}
+    ORDER BY
+        {entity}.name
+    ;
+    """)
+    df.wd = df.wd.apply(lambda s: s.split('/')[-1])
+    df.mbid = df.mbid.apply(str)
+    return df

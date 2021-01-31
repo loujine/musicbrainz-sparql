@@ -2,6 +2,11 @@
 
 ## With wikidata
 
+### Statistics
+
+* [Notebook static version](wd-statistics.md)
+* [Alignment report](wd-statistics-report.html)
+
 ### Artists
 
 * [Notebook static version](wd-artists.md)
