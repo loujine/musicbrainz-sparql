@@ -262,3 +262,19 @@ def mb_entity_list(entity, url_pattern='wikidata.org'):
     df.wd = df.wd.apply(lambda s: s.split('/')[-1])
     df.mbid = df.mbid.apply(str)
     return df
+
+
+def bnf_entity_count(entity_type):
+    type = {
+        'release_group': 'release-group'
+    }.get(entity_type, entity_type)
+    df = sparql(f"""
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+        SELECT (COUNT(?concept) AS ?cnt)
+        WHERE {{
+            ?concept skos:exactMatch ?mb .
+            FILTER (regex (?mb, 'musicbrainz.org/{type}/'))
+        }}
+    """, endpoint='http://data.bnf.fr/sparql')
+    return int(df.cnt[0])

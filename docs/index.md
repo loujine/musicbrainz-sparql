@@ -36,3 +36,10 @@
 
 * [Notebook static version](wd-works.md)
 * [Alignment report](wd-works-report.html)
+
+## With BNF
+
+### Statistics
+
+* [Notebook static version](bnf-statistics.md)
+* [Alignment report](bnf-statistics-report.html)
