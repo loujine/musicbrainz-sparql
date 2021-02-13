@@ -309,3 +309,12 @@ def mb_releasegroup_edit_bnf_link(item):
         'edit-release-group.url.99.type=b988d08c-5d86-4a57-9557-c83b399e3580&'
         f'edit-release-group.url.99.text={DATA_BNF_URL}/{item.bnf}">'
         'edit</a>')
+
+
+def mb_work_edit_bnf_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{MB_URL}/work/{item.mbid}/edit?'
+        'edit-work.url.99.type=b988d08c-5d86-4a57-9557-c83b399e3580&'
+        f'edit-work.url.99.text={DATA_BNF_URL}/{item.bnf}">'
+        'edit</a>')

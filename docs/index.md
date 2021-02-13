@@ -49,6 +49,11 @@
 * [Notebook static version](bnf-releasegroups.md)
 * [Alignment report](bnf-releasegroups-report.html)
 
+### Works
+
+* [Notebook static version](bnf-works.md)
+* [Alignment report](bnf-works-report.html)
+
 ## With Doremus
 
 ### Statistics
