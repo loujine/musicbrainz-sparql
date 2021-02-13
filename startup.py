@@ -15,6 +15,7 @@ print('Defining database parameters')
 DISCOGS_URL = 'https://discogs.com'
 MB_URL = 'https://musicbrainz.org'
 WIKIDATA_URL = 'https://www.wikidata.org/wiki'
+DATA_BNF_URL = 'http://data.bnf.fr/ark:/12148'
 
 PGHOST = os.environ.get('PGHOST', 'localhost')
 PGDATABASE = os.environ.get('PGDATABASE', 'musicbrainz_db')
@@ -173,7 +174,7 @@ def sparql(query, endpoint="https://query.wikidata.org/sparql", **kwargs):
     def _clean_url(url):
         if not url.startswith('http'):
             return url
-        if 'wikidata.org' in url or 'musicbrainz.org' in url:
+        if 'wikidata.org' in url or 'musicbrainz.org' in url or 'bnf.fr' in url:
             return url.split('/')[-1]
         return url
 
@@ -198,6 +199,11 @@ def wd_link(wdid):
             f'href="{WIKIDATA_URL}/{wdid}">{wdid}</a>')
 
 
+def bnf_link(bnf):
+    return ('<a target="_blank" '
+            f'href="{DATA_BNF_URL}/{bnf}">{bnf}</a>')
+
+
 def discogs_link(entity_type, id):
     type = {
         'release-group': 'master',
@@ -214,6 +220,8 @@ def df_to_html(original_df, reindex=True, **kwargs):
         df.index = range(len(df))
     if 'wd' in df.columns:
         df.wd = df.wd.apply(wd_link)
+    if 'bnf' in df.columns:
+        df.bnf = df.bnf.apply(bnf_link)
     if 'mbid' in df.columns:
         df.mbid = df.mbid.apply(lambda mbid: _mb_link(entity_type, mbid))
     if 'discogs' in df.columns:
