@@ -300,3 +300,12 @@ def doremus_entity_count(entity_type):
         }}
     """, endpoint='http://data.doremus.org/sparql')
     return int(df.cnt[0])
+
+
+def mb_releasegroup_edit_bnf_link(item):
+    return (
+        '<a target="_blank" '
+        f'href="{MB_URL}/release-group/{item.mbid}/edit?'
+        'edit-release-group.url.99.type=b988d08c-5d86-4a57-9557-c83b399e3580&'
+        f'edit-release-group.url.99.text={DATA_BNF_URL}/{item.bnf}">'
+        'edit</a>')
